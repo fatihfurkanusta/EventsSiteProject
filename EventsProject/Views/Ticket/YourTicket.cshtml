@@ -1,0 +1,32 @@
+﻿@model EntityLayer.Concrete.Ticket
+
+@{
+    ViewBag.Title = "UserProfile";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<section class="services-two bg-1 padd-3">
+    <div class="container">
+        @using (Html.BeginForm("Index", "UserPanel", FormMethod.Post))
+        {
+            <div class="text-center">
+                <br />
+                <h3>Satın alma işleminiz başarılı bir şekilde gerçekleşmiştir.</h3>
+                <br />
+            </div>
+
+            <div class="modal-body">
+                @Html.HiddenFor(x => x.TicketId)
+                @Html.HiddenFor(x => x.UserID)
+                @Html.HiddenFor(x => x.EventStatus)
+                <div class="form-group">
+                    Bilet Numaranız : @Html.DisplayFor(x => x.TicketNumber, new { @class = "form-control" })
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success">Geri Dön</button>
+                </div>
+            </div>
+        }
+
+    </div>
+</section>

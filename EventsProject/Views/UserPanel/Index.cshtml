@@ -1,0 +1,126 @@
+﻿@using EntityLayer.Concrete
+@model List<Event>
+
+
+@{
+    ViewBag.Title = "UserProfile";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+@{ string color = "";}
+@{ string status = "";}
+
+<section class="services-two bg-1 padd-3">
+    <div class="container">
+
+        <section class="services-two bg-1 padd-3">
+            <div class="container">
+                <br />
+                <h1 class="text-center">Yaklaşan Etkinlikler</h1>
+                <br />
+                <section class="content">
+                    <div class="card">
+                        <div class="card-body p-0">
+                            <table class="table table-striped projects">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 1%" class="text-center">
+                                            #
+                                        </th>
+                                        <th style="width: 20%" class="text-center">
+                                            Etkinlik Adı
+                                        </th>
+                                        <th style="width: 20%" class="text-center">
+                                            Lokasyonu
+                                        </th>
+                                        <th style="width: 15%" class="text-center">
+                                            Açıklama
+                                        </th>
+                                        <th style="width: 10%" class="text-center">
+                                            Kontenjanı
+                                        </th>
+                                        <th style="width: 25%" class="text-center">
+                                            Kategori
+                                        </th>
+                                        <th style="width: 15%" class="text-center">
+                                            Oluşturan Kullanıcı
+                                        </th>
+
+                                        <th style="width: 30%">
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+
+                                        if (item.Category.CategoryName == "Tiyatro")
+                                        {
+                                            color = "badge badge-warning";
+
+                                        }
+                                        if (item.Category.CategoryName == "Spor")
+                                        {
+                                            color = "badge badge-success";
+
+                                        }
+                                        if (item.Category.CategoryName == "Yazılım")
+                                        {
+                                            color = "badge badge-info";
+
+                                        }
+
+
+                                        <tr>
+                                            <td>
+                                                @item.EventId
+                                            </td>
+                                            <td class="text-center">
+                                                <a class="text-center">
+                                                    @item.EventName
+                                                </a>
+                                                <br />
+                                                <small>
+                                                    @(((DateTime)item.EventDate).ToString("dd/MMM/yyyy - hh:mm"))
+                                                </small>
+                                            </td>
+                                            <td class="text-center">
+                                                @item.EventLoc
+                                            </td>
+
+                                            <td class="text-center">
+                                                @item.EventDescription
+                                            </td>
+                                            <td class="text-center">
+                                                @item.EventQuota
+                                            </td>
+                                            <td class="project-state text-center">
+                                                <span class="@color">@item.Category.CategoryName</span>
+                                            </td>
+                                            <td>
+                                                <ul class="list-inline text-center">
+                                                    <li class="list-inline-item">
+                                                        <a>
+                                                            @item.User.UserName
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td>
+                                                @Html.ActionLink("Bilet Al", "BuyTicket", "Ticket", new { id = @item.EventId }, new { @class = "btn btn-info" })
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </section>
+
+    </div>
+</section>

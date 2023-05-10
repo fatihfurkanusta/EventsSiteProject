@@ -1,0 +1,83 @@
+﻿@model EntityLayer.Concrete.Event
+
+@{
+    ViewBag.Title = "EditEvent";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+<section class="service-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                @Html.Action("UserProfilePartial", "UserPanel")
+            </div>
+            <div class="col-md-9">
+                <div class="outer-box">
+                    <section class="content-header">
+                        <div class="container-fluid">
+                            <div class="row mb-2">
+                                <div class="col-sm-6">
+                                    <h1>Etkinlik Düzenle</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="content">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Düzenle</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <br />
+                                <p class="w-100 text-center">@ViewBag.UpdateError</p>
+                                @using (Html.BeginForm("EditEvent", "UserPanel", FormMethod.Post))
+                                {
+
+                                    <div class="form-group">
+                                        @Html.HiddenFor(x => x.EventId)
+                                        @Html.Label("Etkinlik Adı")
+                                        @Html.TextBoxFor(x => x.EventName, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(x => x.EventName)
+
+                                        <br />
+                                        @Html.Label("Lokasyon")
+                                        @Html.DropDownListFor(x => x.EventLoc, (IEnumerable<SelectListItem>)ViewBag.city, new { @class = "form-control" })
+
+                                        <br />
+
+                                        @Html.Label("Açıklama")
+                                        @Html.TextBoxFor(x => x.EventDescription, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(x => x.EventDescription)
+                                        <br />
+                                        @Html.Label("Etkinlik Zamanı")
+                                        @Html.TextBoxFor(x => x.EventDate, new { @class = "datetimepicker", placeholder = "Tarih ve Saati Seçiniz" })
+
+                                        <br />
+                                        @Html.Label("Kontenjan")
+                                        @Html.TextBoxFor(x => x.EventQuota, new { @class = "form-control" })
+
+                                        <br />
+                                        @Html.Label("Etkinlik Kategorisi")
+                                        @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
+
+                                        <br />
+                                        <button class="btn btn-info">Düzenle</button>
+                                        <a class="btn btn-success" href="@Url.Action("MyEvent","UserPanel")">Geri Dön</a>
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

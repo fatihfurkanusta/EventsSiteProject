@@ -1,0 +1,425 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
+    <!-- IonIcons -->
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/dist/css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    
+    <meta charset="UTF-8">
+    <title>Narail || Responsive HTML 5 Template</title>
+
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    <link rel="stylesheet" href="@Url.Content("~/Content/Site/css/style.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/Site/css/responsive.css")">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16">
+
+</head>
+<body>
+
+    <div class="boxed_wrapper">
+
+        <header class="top-bar">
+            <div class="container">
+                <div class="clearfix">
+                    <ul class="top-bar-text float_left">
+                        <li><i class="flaticon-telephone"></i>Telefon : 544 551 55 09</li>
+                        <li><i class="flaticon-envelope"></i>fatihfurkanusta@outlook.com</li>
+                    </ul>
+                    <ul class="social-style-one float_right">
+                        <li><a href="https://www.linkedin.com/in/fathfurkn/"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="https://github.com/fatihfurkanusta"><i class="fa fa-github"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+
+        <section class="mainmenu-area stricky">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="main-logo">
+                            <a href="@Url.Action("","")"><img src="@Url.Content("~/Content/Site/images/logo/logo.png")" " alt=""></a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 menu-column">
+                        <nav class="main-menu">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="navbar-collapse collapse clearfix">
+                                <ul class="navigation clearfix">
+
+                                    <li class="current dropdown">
+                                        <a href="@Url.Action("Index","UserPanel")">anasayfa</a>
+                                    </li>
+
+                                    <li class="dropdown">
+                                        <a href="@Url.Action("UserProfile","UserPanel")">Profilim</a>
+                                    </li>
+                                </ul>
+
+                                <ul class="mobile-menu clearfix">
+
+                                    <li class="dropdown">
+                                        <a href="index.html">Anasayfa</a>
+                                        <ul>
+                                            <li><a href="index.html">Homepage One</a></li>
+                                            <li><a href="index-2.html">Homepage Two</a></li>
+                                            <li><a href="index-3.html">Homepage Three</a></li>
+                                            <li><a href="index-4.html">Homepage Four</a></li>
+                                            <li><a href="index-5.html">Homepage Five</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="dropdown">
+                                        <a href="#">Etkinlikler</a>
+                                        <ul>
+                                            <li><a href="our-projects.html">Hepsi</a></li>
+                                            <li><a href="project-single.html">Kategoriler</a></li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="right-column">
+                            <div class="right-area">
+                                <div class="link-btn4 float_right">
+                                    <a href="@Url.Action("Logout","Login")" class="btn-style-one">Çıkış Yap</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        @RenderBody()
+
+
+        <!-- Scroll Top Button -->
+        <button class="scroll-top tran3s color2_bg">
+            <span class="fa fa-angle-up"></span>
+        </button>
+        <!-- pre loader  -->
+        <div class="preloader"></div>
+
+
+        <!-- jQuery js -->
+        <script src="@Url.Content("~/Content/Site/js/jquery.js")"></script>
+        <!-- bootstrap js -->
+        @*<script src="@Url.Content("~/Content/Site/js/bootstrap.min.js")"></script>*@
+        <!-- jQuery ui js -->
+        <script src="@Url.Content("~/Content/Site/js/jquery-ui.js")"></script>
+        <!-- owl carousel js -->
+        <script src="@Url.Content("~/Content/Site/js/owl.carousel.min.js")"></script>
+        <!-- jQuery validation -->
+        <script src="@Url.Content("~/Content/Site/js/jquery.validate.min.js")"></script>
+        <!-- google map -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRvBPo3-t31YFk588DpMYS6EqKf-oGBSI"></script>
+        <script src="@Url.Content("~/Content/Site/js/gmap.js")"></script>
+        <!-- mixit up -->
+        <script src="@Url.Content("~/Content/Site/js/wow.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/jquery.mixitup.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/jquery.fitvids.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/bootstrap-select.min.js")"></script>
+
+        <!-- revolution slider js -->
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/jquery.themepunch.tools.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/jquery.themepunch.revolution.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.actions.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.carousel.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.kenburn.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.layeranimation.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.migration.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.navigation.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.parallax.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.slideanims.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.video.min.js")"></script>
+
+        <!-- fancy box -->
+        <script src="@Url.Content("~/Content/Site/js/jquery.fancybox.pack.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/jquery.polyglot.language.switcher.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/nouislider.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/jquery.bootstrap-touchspin.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/SmoothScroll.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/jquery.appear.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/jquery.countTo.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/jquery.flexslider.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/imagezoom.js")"></script>
+        <script id="map-script" src="@Url.Content("~/Content/Site/js/default-map.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/custom.js")"></script>
+
+        <!-- REQUIRED SCRIPTS -->
+        <!-- jQuery -->
+        <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- AdminLTE -->
+        <script src="~/AdminLTE-3.0.4/dist/js/adminlte.js"></script>
+        <!-- OPTIONAL SCRIPTS -->
+        <script src="~/AdminLTE-3.0.4/plugins/chart.js/Chart.min.js"></script>
+        <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
+        <script src="~/AdminLTE-3.0.4/dist/js/pages/dashboard3.js"></script>
+    </div>
+
+</body>
+</html>
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>AdminLTE 3 | Dashboard 3</title>-->
+<!-- Font Awesome Icons -->
+<!--<link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">-->
+<!-- IonIcons -->
+<!--<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">-->
+<!-- Theme style -->
+<!--<link rel="stylesheet" href="~/AdminLTE-3.0.4/dist/css/adminlte.min.css">-->
+<!-- Google Font: Source Sans Pro -->
+<!--<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>-->
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to to the body tag
+to get the desired effect
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<!--<body class="hold-transition sidebar-mini">
+    <div class="wrapper">-->
+<!-- Navbar -->
+<!-- /.navbar -->
+<!-- Main Sidebar Container -->
+<!--<aside class="main-sidebar sidebar-dark-primary elevation-4">-->
+<!-- Brand Logo -->
+<!--<a href="index3.html" class="brand-link">
+    <img src="~/AdminLTE-3.0.4/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+         style="opacity: .8">
+    <span class="brand-text font-weight-light">AdminLTE 3</span>
+</a>-->
+<!-- Sidebar -->
+<!--<div class="sidebar">-->
+<!-- Sidebar user panel (optional) -->
+<!--<div class="user-panel mt-3 pb-3 mb-3 d-flex">
+    <div class="image">
+        <img src="~/AdminLTE-3.0.4/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+    </div>
+    <div class="info">
+        <a href="#" class="d-block">Alexander Pierce</a>
+    </div>
+</div>-->
+<!-- Sidebar Menu -->
+<!--<nav class="mt-2">
+    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">-->
+<!-- Add icons to the links using the .nav-icon class
+     with font-awesome or any other icon font library -->
+<!--<li class="nav-item has-treeview menu-open">
+                <a href="/AdminCategory/Index/" class="nav-link active">
+                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>
+                        Profil Bilgilerim
+
+                    </p>
+                </a>
+            </li>
+
+        <li class="nav-item">
+            <a href="/Event/Index/" class="nav-link">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                    Etkinlikler
+                </p>
+            </a>
+        </li>
+        <li class="nav-item has-treeview">
+            <a href="/User/Index/" class="nav-link">
+                <i class="nav-icon fas fa-copy"></i>
+                <p>
+                    Biletlerim
+                </p>
+            </a>
+        </li>
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-chart-pie"></i>
+                <p>
+                    Grafikler
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="pages/charts/chartjs.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Grafik 1</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/charts/flot.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Grafik 2</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/charts/inline.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Grafik 3</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-tree"></i>
+                <p>
+                    Hakkımızda
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+            </a>
+        </li>
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-edit"></i>
+                <p>
+                    İletişim & Mesajlar
+                </p>
+            </a>
+        </li>
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-table"></i>
+                <p>
+                    Tables
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="pages/tables/simple.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Simple Tables</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/tables/data.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>DataTables</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/tables/jsgrid.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>jsGrid</p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a href="pages/calendar.html" class="nav-link">
+                <i class="nav-icon fas fa-calendar-alt"></i>
+                <p>
+                    Takvim
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="pages/gallery.html" class="nav-link">
+                <i class="nav-icon far fa-image"></i>
+                <p>
+                    Galeri
+                </p>
+            </a>
+        </li>
+        <li class="nav-item has-treeview">
+            <a href="/ErrorPage/Page404/" class="nav-link">
+                <i class="nav-icon far fa-envelope"></i>
+                <p>
+                    Hata Sayfaları
+                </p>
+            </a>
+        </li>
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                    Siteye Git
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+            </a>
+        </li>
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-door-closed"></i>
+                <p>
+                    Çıkış Yap
+                </p>
+            </a>
+        </li>
+    </ul>
+</nav>-->
+<!-- /.sidebar-menu -->
+<!--</div>-->
+<!-- /.sidebar -->
+<!--</aside>-->
+<!-- Content Wrapper. Contains page content -->
+<!--<div class="content-wrapper">-->
+<!-- Main content -->
+<!--<div class="content">
+    -->
+<!-- /.container-fluid -->
+<!--</div>-->
+<!-- /.content -->
+<!--</div>-->
+<!-- /.content-wrapper -->
+<!--</div>-->
+<!-- ./wrapper -->
+<!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<!--<script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>-->
+<!-- Bootstrap -->
+<!--<script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+<!-- AdminLTE -->
+<!--<script src="~/AdminLTE-3.0.4/dist/js/adminlte.js"></script>-->
+<!-- OPTIONAL SCRIPTS -->
+<!--<script src="~/AdminLTE-3.0.4/plugins/chart.js/Chart.min.js"></script>
+    <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
+    <script src="~/AdminLTE-3.0.4/dist/js/pages/dashboard3.js"></script>
+</body>
+</html>-->

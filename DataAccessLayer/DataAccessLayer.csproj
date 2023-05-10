@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{472AC359-F5D6-4C40-86B4-F5393B1FF066}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataAccessLayer</RootNamespace>
+    <AssemblyName>DataAccessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IAboutDal.cs" />
+    <Compile Include="Abstract\IAllowEventDal.cs" />
+    <Compile Include="Abstract\ICategoryDal.cs" />
+    <Compile Include="Abstract\ICityDal.cs" />
+    <Compile Include="Abstract\IContactDal.cs" />
+    <Compile Include="Abstract\IEventDal.cs" />
+    <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Abstract\ITicketDal.cs" />
+    <Compile Include="Abstract\IUserDal.cs" />
+    <Compile Include="Concrete\Context.cs" />
+    <Compile Include="Concrete\Repositories\CategoryRepository.cs" />
+    <Compile Include="Concrete\Repositories\GenericRepository.cs" />
+    <Compile Include="EntityFramework\EfCityDal.cs" />
+    <Compile Include="EntityFramework\EfAboutDal.cs" />
+    <Compile Include="EntityFramework\EfAllowEventDal.cs" />
+    <Compile Include="EntityFramework\EfCategoryDal.cs" />
+    <Compile Include="EntityFramework\EfContactDal.cs" />
+    <Compile Include="EntityFramework\EfEventDal.cs" />
+    <Compile Include="EntityFramework\EfTicketDal.cs" />
+    <Compile Include="EntityFramework\EfUserDal.cs" />
+    <Compile Include="Migrations\202305032322498_mig1.cs" />
+    <Compile Include="Migrations\202305032322498_mig1.designer.cs">
+      <DependentUpon>202305032322498_mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305042221362_mig_user_edit.cs" />
+    <Compile Include="Migrations\202305042221362_mig_user_edit.designer.cs">
+      <DependentUpon>202305042221362_mig_user_edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305051633389_mig_event_edited.cs" />
+    <Compile Include="Migrations\202305051633389_mig_event_edited.designer.cs">
+      <DependentUpon>202305051633389_mig_event_edited.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305051639558_mig_user_addStatus.cs" />
+    <Compile Include="Migrations\202305051639558_mig_user_addStatus.designer.cs">
+      <DependentUpon>202305051639558_mig_user_addStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305051931142_mig2.cs" />
+    <Compile Include="Migrations\202305051931142_mig2.designer.cs">
+      <DependentUpon>202305051931142_mig2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305052234285_mig_add_eventStatus.cs" />
+    <Compile Include="Migrations\202305052234285_mig_add_eventStatus.designer.cs">
+      <DependentUpon>202305052234285_mig_add_eventStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305071226458_mig_admin_table.cs" />
+    <Compile Include="Migrations\202305071226458_mig_admin_table.designer.cs">
+      <DependentUpon>202305071226458_mig_admin_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305082300336_mig_add_eventloc.cs" />
+    <Compile Include="Migrations\202305082300336_mig_add_eventloc.designer.cs">
+      <DependentUpon>202305082300336_mig_add_eventloc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305090129289_sd.cs" />
+    <Compile Include="Migrations\202305090129289_sd.designer.cs">
+      <DependentUpon>202305090129289_sd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305090247061_mig_ticket_changes.cs" />
+    <Compile Include="Migrations\202305090247061_mig_ticket_changes.designer.cs">
+      <DependentUpon>202305090247061_mig_ticket_changes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305091709587_mig_add_allowEvent.cs" />
+    <Compile Include="Migrations\202305091709587_mig_add_allowEvent.designer.cs">
+      <DependentUpon>202305091709587_mig_add_allowEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305091850423_mig_add_allowEvent_checkStatus.cs" />
+    <Compile Include="Migrations\202305091850423_mig_add_allowEvent_checkStatus.designer.cs">
+      <DependentUpon>202305091850423_mig_add_allowEvent_checkStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305100158495_add_city.cs" />
+    <Compile Include="Migrations\202305100158495_add_city.designer.cs">
+      <DependentUpon>202305100158495_add_city.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305100306419_mig_add_eventQuota.cs" />
+    <Compile Include="Migrations\202305100306419_mig_add_eventQuota.designer.cs">
+      <DependentUpon>202305100306419_mig_add_eventQuota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305100312585_mig-add-AllowEventQuota.cs" />
+    <Compile Include="Migrations\202305100312585_mig-add-AllowEventQuota.designer.cs">
+      <DependentUpon>202305100312585_mig-add-AllowEventQuota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
+      <Project>{f9454542-4600-460a-901f-b492d9d7dcd1}</Project>
+      <Name>EntityLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202305032322498_mig1.resx">
+      <DependentUpon>202305032322498_mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305042221362_mig_user_edit.resx">
+      <DependentUpon>202305042221362_mig_user_edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305051633389_mig_event_edited.resx">
+      <DependentUpon>202305051633389_mig_event_edited.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305051639558_mig_user_addStatus.resx">
+      <DependentUpon>202305051639558_mig_user_addStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305051931142_mig2.resx">
+      <DependentUpon>202305051931142_mig2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305052234285_mig_add_eventStatus.resx">
+      <DependentUpon>202305052234285_mig_add_eventStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305071226458_mig_admin_table.resx">
+      <DependentUpon>202305071226458_mig_admin_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305082300336_mig_add_eventloc.resx">
+      <DependentUpon>202305082300336_mig_add_eventloc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305090129289_sd.resx">
+      <DependentUpon>202305090129289_sd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305090247061_mig_ticket_changes.resx">
+      <DependentUpon>202305090247061_mig_ticket_changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305091709587_mig_add_allowEvent.resx">
+      <DependentUpon>202305091709587_mig_add_allowEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305091850423_mig_add_allowEvent_checkStatus.resx">
+      <DependentUpon>202305091850423_mig_add_allowEvent_checkStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305100158495_add_city.resx">
+      <DependentUpon>202305100158495_add_city.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305100306419_mig_add_eventQuota.resx">
+      <DependentUpon>202305100306419_mig_add_eventQuota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305100312585_mig-add-AllowEventQuota.resx">
+      <DependentUpon>202305100312585_mig-add-AllowEventQuota.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

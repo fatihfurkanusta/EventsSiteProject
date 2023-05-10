@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Narail || Responsive HTML 5 Template</title>
+
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    <link rel="stylesheet" href="@Url.Content("~/Content/Site/css/style.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/Site/css/responsive.css")">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16">
+
+</head>
+<body>
+
+    <div class="boxed_wrapper">
+
+        <header class="top-bar">
+            <div class="container">
+                <div class="clearfix">
+                    <ul class="top-bar-text float_left">
+                        <li><i class="flaticon-telephone"></i>Telefon : 544 551 55 09</li>
+                        <li><i class="flaticon-envelope"></i>fatihfurkanusta@outlook.com</li>
+                    </ul>
+                    <ul class="social-style-one float_right">
+                        <li><a href="https://www.linkedin.com/in/fathfurkn/"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="https://github.com/fatihfurkanusta"><i class="fa fa-github"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+
+        <section class="mainmenu-area stricky">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="main-logo">
+                            <a href="@Url.Action("","")"><img src="@Url.Content("~/Content/Site/images/logo/logo.png")" " alt=""></a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 menu-column">
+                        <nav class="main-menu">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="navbar-collapse collapse clearfix">
+                                <ul class="navigation clearfix">
+
+                                    <li class="current dropdown">
+                                        <a href="@Url.Action("","")">anasayfa</a>
+                                    </li>
+
+                                    <li class="dropdown">
+                                        <a href="@Url.Action("Index","Event")">etkinlikler</a>
+                                    </li>
+
+
+                                    <li class="dropdown">
+                                        <a href="@Url.Action("CheckTicket","Ticket")">Bilet Kontrol</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="@Url.Action("AddUser2","User")">Üye Ol</a>
+                                    </li>
+
+                                </ul>
+
+                                <ul class="mobile-menu clearfix">
+
+                                    <li class="dropdown">
+                                        <a href="index.html">Anasayfa</a>
+                                        <ul>
+                                            <li><a href="index.html">Homepage One</a></li>
+                                            <li><a href="index-2.html">Homepage Two</a></li>
+                                            <li><a href="index-3.html">Homepage Three</a></li>
+                                            <li><a href="index-4.html">Homepage Four</a></li>
+                                            <li><a href="index-5.html">Homepage Five</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="dropdown">
+                                        <a href="@Url.Action("Event","Home")">Etkinlikler</a>
+                                    </li>
+
+                                    <li class="dropdown">
+                                        <a href="@Url.Action("CheckTicket","Ticket")" class="btn-style-one">
+                                            Bilet Kontrol
+                                        </a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="@Url.Action("AddUser2","User")">Üye Ol</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="right-column">
+                            <div class="right-area">
+                                <div class="link-btn4 float_right">
+                                    <a href="@Url.Action("UserLogin","Login")" class="btn-style-one">
+                                        Giriş Yap
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        @RenderBody()
+
+
+
+
+        <!-- Scroll Top Button -->
+        <button class="scroll-top tran3s color2_bg">
+            <span class="fa fa-angle-up"></span>
+        </button>
+        <!-- pre loader  -->
+        <div class="preloader"></div>
+
+
+        <!-- jQuery js -->
+        <script src="@Url.Content("~/Content/Site/js/jquery.js")"></script>
+        <!-- bootstrap js -->
+        <script src="@Url.Content("~/Content/Site/js/bootstrap.min.js")"></script>
+        <!-- jQuery ui js -->
+        <script src="@Url.Content("~/Content/Site/js/jquery-ui.js")"></script>
+        <!-- owl carousel js -->
+        <script src="@Url.Content("~/Content/Site/js/owl.carousel.min.js")"></script>
+        <!-- jQuery validation -->
+        <script src="@Url.Content("~/Content/Site/js/jquery.validate.min.js")"></script>
+        <!-- google map -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRvBPo3-t31YFk588DpMYS6EqKf-oGBSI"></script>
+        <script src="@Url.Content("~/Content/Site/js/gmap.js")"></script>
+        <!-- mixit up -->
+        <script src="@Url.Content("~/Content/Site/js/wow.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/jquery.mixitup.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/jquery.fitvids.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/bootstrap-select.min.js")"></script>
+
+        <!-- revolution slider js -->
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/jquery.themepunch.tools.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/jquery.themepunch.revolution.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.actions.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.carousel.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.kenburn.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.layeranimation.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.migration.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.navigation.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.parallax.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.slideanims.min.js")"></script>
+        <script src="@Url.Content("~/Content/Site/assets/revolution/js/extensions/revolution.extension.video.min.js")"></script>
+
+        <!-- fancy box -->
+        <script src="@Url.Content("~/Content/Site/js/jquery.fancybox.pack.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/jquery.polyglot.language.switcher.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/nouislider.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/jquery.bootstrap-touchspin.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/SmoothScroll.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/jquery.appear.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/jquery.countTo.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/jquery.flexslider.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/imagezoom.js")"></script>
+        <script id="map-script" src="@Url.Content("~/Content/Site/js/default-map.js")"></script>
+        <script src="@Url.Content("~/Content/Site/js/custom.js")"></script>
+
+        <!-- REQUIRED SCRIPTS -->
+        <!-- jQuery -->
+        <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- AdminLTE -->
+        <script src="~/AdminLTE-3.0.4/dist/js/adminlte.js"></script>
+        <!-- OPTIONAL SCRIPTS -->
+        <script src="~/AdminLTE-3.0.4/plugins/chart.js/Chart.min.js"></script>
+        <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
+        <script src="~/AdminLTE-3.0.4/dist/js/pages/dashboard3.js"></script>
+
+    </div>
+
+</body>
+</html>

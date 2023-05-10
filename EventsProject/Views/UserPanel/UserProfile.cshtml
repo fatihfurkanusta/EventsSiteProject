@@ -1,0 +1,77 @@
+﻿@model EntityLayer.Concrete.User 
+
+@{
+    ViewBag.Title = "UserProfile";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+<section class="service-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                @Html.Action("UserProfilePartial", "UserPanel")
+            </div>
+            <div class="col-md-9">
+                <div class="outer-box">
+                    <section class="content-header">
+                        <div class="container-fluid">
+                            <div class="row mb-2">
+                                <div class="col-sm-6">
+                                    <h1>Profil Bilgilerim</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="outer-box">
+                        <section class="content">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Profil İşlemleri</h3>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-body p-0">
+                                    <br />
+                                    @using (Html.BeginForm("UserProfile", "UserPanel", FormMethod.Post))
+                                    {
+                                        <div class="form-group">
+                                            @Html.HiddenFor(x => x.UserID, new { @class = "form-control" })
+                                            @Html.Label("Kullanıcı Adı")
+                                            @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.UserName)
+                                            <br />
+                                            @Html.Label("Kullanıcı Soy Adı")
+                                            @Html.TextBoxFor(x => x.UserSurname, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.UserSurname)
+                                            <br />
+                                            @Html.Label("Kullanıcı Maili")
+                                            @Html.TextBoxFor(x => x.UserEmail, new { @class = "form-control", @readonly = "readonly" })
+                                            @Html.ValidationMessageFor(x => x.UserEmail)
+                                            <br />
+                                            @Html.Label("Kullanıcı Parolası")
+                                            @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.Password)
+                                            <br />
+                                            <button class="btn btn-info">Değişiklikleri Uygula</button>
+                                        </div>
+                                    }
+
+                                </div>
+                            </div>
+                        </section>
+                       
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

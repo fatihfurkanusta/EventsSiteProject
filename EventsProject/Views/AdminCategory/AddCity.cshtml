@@ -1,0 +1,21 @@
+﻿@model EntityLayer.Concrete.City
+
+@{
+    ViewBag.Title = "AddCity";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("AddCity", "AdminCategory", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Şehir Adı")
+        @Html.TextBoxFor(x => x.CityName, new { @class = "form-control" })
+
+        @Html.ValidationMessageFor(x => x.CityName)
+
+        <button class="btn btn-info">Şehir Ekle</button>
+    </div>
+
+}
+

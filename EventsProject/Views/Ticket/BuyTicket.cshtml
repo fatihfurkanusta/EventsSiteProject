@@ -1,0 +1,32 @@
+﻿@model EntityLayer.Concrete.Event
+
+@{
+    ViewBag.Title = "UserProfile";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+<section class="services-two bg-1 padd-3">
+    <div class="container">
+        @using (Html.BeginForm("BuyTicket", "Ticket", FormMethod.Post))
+        {
+            <div class="modal-body">
+                @Html.HiddenFor(x => x.EventId)
+                <div class="form-group">
+                    Etkinlik Adı : @Html.DisplayFor(x => x.EventName, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    Etkinlik Tarihi : @Html.DisplayFor(x => x.EventDate, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    Etkinlik Lokasyonu : @Html.DisplayFor(x => x.EventLoc, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success">Satın Al</button>
+                <a class="btn btn-info" onclick="history.back()">Geri Dön</a>
+            </div>
+        }
+
+    </div>
+</section>

@@ -1,0 +1,44 @@
+﻿@model EntityLayer.Concrete.Event
+
+@{
+    ViewBag.Title = "AddUser";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+@using (Html.BeginForm("AddEvent", "Event", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Etkinlik Adı")
+        @Html.TextBoxFor(x => x.EventName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.EventName)
+        <br />
+        @Html.Label("Etkinlik Zamanı")
+        @Html.TextBoxFor(x => x.EventDate, new { @class = "datetimepicker", placeholder = "Tarih ve Saati Seçiniz" })
+
+        <br />
+        @Html.Label("Etkinlik Lokasyonu")
+        @Html.DropDownListFor(x => x.EventLoc, (List<SelectListItem>)ViewBag.city, new { @class = "form-control" })
+
+        <br />
+        @Html.Label("Etkinlik Açıklaması")
+        @Html.TextBoxFor(x => x.EventDescription, new { @class = "form-control" })
+
+        <br />
+        @Html.Label("Etkinlik Kontenjanı")
+        @Html.TextBoxFor(x => x.EventQuota, new { @class = "form-control" })
+
+        <br />
+        @Html.Label("Etkinlik Kategorisi")
+        @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
+        <br />
+        @Html.Label("Oluşturan Kişi")
+        @Html.DropDownListFor(x => x.UserID, (List<SelectListItem>)ViewBag.vlu, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Etkinlik Ekle</button>
+
+
+    </div>
+
+}

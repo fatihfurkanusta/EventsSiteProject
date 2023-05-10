@@ -1,0 +1,72 @@
+﻿@using EntityLayer.Concrete
+@model List<AllowEvent>
+
+
+@{ string color = "";}
+@{ string status = "";}
+
+<tbody>
+    @foreach (var item in Model)
+    {
+
+        if (item.Category.CategoryName == "Tiyatro")
+        {
+            color = "badge badge-warning";
+
+        }
+        if (item.Category.CategoryName == "Spor")
+        {
+            color = "badge badge-success";
+
+        }
+        if (item.Category.CategoryName == "Yazılım")
+        {
+            color = "badge badge-info";
+
+        }
+
+        <tr>
+            <td>
+                @item.AllowEventId
+            </td>
+            <td class="text-center">
+                <a class="text-center">
+                    @item.AllowEventName
+                </a>
+                <br />
+                <small>
+                    @(((DateTime)item.AllowEventDate).ToString("dd/MMM/yyyy - hh:mm"))
+                </small>
+            </td>
+            <td class="text-center">
+                @item.AllowEventLoc
+            </td>
+
+            <td class="text-center">
+                @item.AllowEventDescription
+            </td>
+            <td class="text-center">
+                @item.AllowEventQuota
+            </td>
+            <td class="project-state text-center">
+                <span class="@color">@item.Category.CategoryName</span>
+            </td>
+            <td>
+                <ul class="list-inline text-center">
+                    <li class="list-inline-item">
+                        <a>
+                            @item.User.UserName
+                        </a>
+                    </li>
+                </ul>
+            </td>
+            <td>
+                @Html.ActionLink("Onayla", "ApproveEvent", "Event", new { id = @item.AllowEventId }, new { @class = "btn btn-info" })
+            </td>
+            <td>
+                @Html.ActionLink("Reddet", "RefuseEvent", "Event", new { id = @item.AllowEventId }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</tbody>

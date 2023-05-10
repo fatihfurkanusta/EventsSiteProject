@@ -1,0 +1,34 @@
+﻿@model EntityLayer.Concrete.User
+
+@{
+    ViewBag.Title = "AddUser";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Kullanıcı Ekleme</h2>
+<br />
+@using (Html.BeginForm("AddUser", "User", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Kullanıcı Adı")
+        @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.UserName)
+        <br />
+        @Html.Label("Kullanıcı Soy Adı")
+        @Html.TextBoxFor(x => x.UserSurname, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.UserSurname)
+        <br />
+        @Html.Label("Kullanıcı Maili")
+        @Html.TextBoxFor(x => x.UserEmail, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.UserEmail)
+        <br />
+        @Html.Label("Kullanıcı Parolası")
+        @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Password)
+        <br />
+        
+        <button class="btn btn-info">Kullanıcı Ekle</button>
+
+    </div>
+}
+

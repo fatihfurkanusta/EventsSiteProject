@@ -1,0 +1,254 @@
+﻿@using EntityLayer.Concrete
+@model List<Contact>
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+
+<body class="hold-transition sidebar-mini">
+
+    <!-- Content Wrapper. Contains page content -->
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Mesaj Sayfası</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Inbox</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            @Html.Action("ContactPartial", "Contact")
+                <!-- /.col -->
+                <div class="col-md-9">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h3 class="card-title">Gelen Mesajlar</h3>
+                            <div class="card-tools">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control" placeholder="Mail Kutusunda Ara">
+                                    <div class="input-group-append">
+                                        <div class="btn btn-primary">
+                                            <i class="fas fa-search"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-tools -->
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body p-0">
+                            <div class="mailbox-controls">
+                                <!-- Check all button -->
+                                <button type="button" class="btn btn-default btn-sm checkbox-toggle">
+                                    <i class="far fa-square"></i>
+                                </button>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
+                                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-reply"></i></button>
+                                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-share"></i></button>
+                                </div>
+                                <!-- /.btn-group -->
+                                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
+                                <div class="float-right">
+                                    1-50/200
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-left"></i></button>
+                                        <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-right"></i></button>
+                                    </div>
+                                    <!-- /.btn-group -->
+                                </div>
+                                <!-- /.float-right -->
+                            </div>
+                            <div class="table-responsive mailbox-messages">
+                                <table class="table table-hover table-striped">
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    <div class="icheck-primary">
+                                                        <input type="checkbox" value="" id="check1">
+                                                        <label for="check1"></label>
+                                                    </div>
+                                                </td>
+                                                <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
+                                                <td class="mailbox-name"><a href="/Contact/GetContactDetails/@item.ContactID">@item.ContactName</a></td>
+                                                <td class="mailbox-subject">
+                                                    <b>@item.Subject</b> - @item.Massage.Substring(0, 2)...
+                                                </td>
+                                                <td class="mailbox-attachment"></td>
+                                                <td class="mailbox-date">5 mins ago</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                                <!-- /.table -->
+                            </div>
+                            <!-- /.mail-box-messages -->
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer p-0">
+                            <div class="mailbox-controls">
+                                <!-- Check all button -->
+                                <button type="button" class="btn btn-default btn-sm checkbox-toggle">
+                                    <i class="far fa-square"></i>
+                                </button>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
+                                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-reply"></i></button>
+                                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-share"></i></button>
+                                </div>
+                                <!-- /.btn-group -->
+                                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
+                                <div class="float-right">
+                                    1-50/200
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-left"></i></button>
+                                        <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-right"></i></button>
+                                    </div>
+                                    <!-- /.btn-group -->
+                                </div>
+                                <!-- /.float-right -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+        <!-- /.row -->
+    </section>
+
+</body>
+</html>
+
+
+
+
+<!--<div class="inner-banner has-base-color-overlay text-center" style="background: url(images/background/1.jpg);">
+    <div class="container">
+        <div class="box">
+            <h3>contact us</h3>
+        </div>-->
+<!-- /.box -->
+<!--</div>--><!-- /.container -->
+<!--</div>
+
+<section class="contact_us">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-8 col-sm-12 col-xs-12">
+                <div class="sec-title">
+                    <h2>İletişim</h2>
+                </div>
+                <div class="default-form-area">
+                    <form id="contact-form" name="contact_form" class="default-form" action="inc/sendmail.php" method="post" novalidate="novalidate">
+                        <div class="row clearfix">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+
+                                <div class="form-group">
+                                    <input type="text" name="form_name" class="form-control" value="" placeholder="Adınız *" required="" aria-required="true">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <input type="email" name="form_email" class="form-control required email" value="" placeholder="Mail Adresiniz *" required="" aria-required="true">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <input type="text" name="form_phone" class="form-control" value="" placeholder="Telefon Numarası">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <input type="text" name="form_subject" class="form-control" value="" placeholder="Konu">
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <textarea name="form_message" class="form-control textarea required" placeholder="Mesajınız...." aria-required="true"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
+                                    <button class="btn-style-one" type="submit" data-loading-text="Please wait...">Gönder</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-8 col-xs-12">
+                <div class="sec-title">
+                    <h2>İletişim Bilgilerimiz</h2>
+                </div>
+                <div class="text">
+                    <p>Lorem ipsum dolor sit amet, vix an natum labitur eleifend, mel amet a laorit menandri.</p>
+                </div>
+                <br>
+                <div class="default-cinfo">
+
+                    <div class="acc-content collapsed">
+                        <ul class="contact-infos">
+                            <li>
+                                <div class="icon_box">
+                                    <i class="fa fa-map-marker"></i>
+                                </div>-->
+<!-- /.icon-box -->
+<!--<div class="text-box">
+    <p><b>Adres:</b> <br> 121 Rain St, Melbourne 3000, Australia.</p>
+</div>-->
+<!-- /.text-box -->
+<!--</li>
+<li>
+    <div class="icon_box">
+        <i class="fa fa-phone"></i>
+    </div>-->
+<!-- /.icon-box -->
+<!--<div class="text-box">
+    <p><b>Numara:</b> <br> +222 4444 88 999</p>
+</div>-->
+<!-- /.text-box -->
+<!--</li>
+<li>
+    <div class="icon_box">
+        <i class="fa fa-envelope"></i>
+    </div>-->
+<!-- /.icon-box -->
+<!--<div class="text-box">
+                                    <p><b>Mail Adresi:</b> <br> Yourmail@info.com</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>-->
+<!-- Map Section-->
+<!--<div class="map-section">
+    <div class="map-outer">-->
+<!--Map Canvas-->
+<!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.5781148878714!2d29.07254767660448!3d40.990718071353086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab8039c8f2faf%3A0x9a6dc556473d1e7a!2sKonfides%20Bilgi%20Teknolojileri%20Tic.%20A.%C5%9E.!5e0!3m2!1str!2str!4v1683140570412!5m2!1str!2str" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>-->
+<!-- End Map Section-->

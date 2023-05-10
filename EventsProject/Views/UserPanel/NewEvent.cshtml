@@ -1,0 +1,76 @@
+﻿@model EntityLayer.Concrete.AllowEvent
+
+@{
+    ViewBag.Title = "NewEvent";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+<section class="service-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                @Html.Action("UserProfilePartial", "UserPanel")
+            </div>
+            <div class="col-md-9">
+                <div class="outer-box">
+                    <section class="content-header">
+                        <div class="container-fluid">
+                            <div class="row mb-2">
+                                <div class="col-sm-6">
+                                    <h1>Etkinlik Oluştur</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="content">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Yeni Etkinlik</h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                
+                                <br />
+                                @using (Html.BeginForm("NewEvent", "UserPanel", FormMethod.Post))
+                                {
+                                    <div class="form-group">
+                                        @Html.HiddenFor(x => x.AllowEventId, new { @class = "form-control" })
+                                        @Html.Label("Etkinlik Adı")
+                                        @Html.TextBoxFor(x => x.AllowEventName, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(x => x.AllowEventName)
+                                        <br />
+                                        @Html.Label("Açıklama")
+                                        @Html.TextBoxFor(x => x.AllowEventDescription, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(x => x.AllowEventDescription)
+                                        <br />
+                                        @Html.Label("Etkinlik Lokasyonu")
+                                        @Html.DropDownListFor(x => x.AllowEventLoc, (List<SelectListItem>)ViewBag.city, new { @class = "form-control" })
+                                        <br />
+                                        @Html.Label("Etkinlik Zamanı")
+                                        @Html.TextBoxFor(x => x.AllowEventDate, new { @class = "datetimepicker", placeholder = "Tarih ve Saati Seçiniz" })
+                                        <br />
+                                        @Html.Label("Kontenjan")
+                                        @Html.TextBoxFor(x => x.AllowEventQuota, new { @class = "form-control" })
+                                        <br />
+                                        @Html.Label("Etkinlik Kategorisi")
+                                        @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
+
+                                        <br />
+                                        <button class="btn btn-info">Etkinlik Ekle</button>
+                                        <button type="button" class="btn btn-success" onclick="history.back()">Geri Dön</button>
+                                    </div>
+                                }
+                                
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
