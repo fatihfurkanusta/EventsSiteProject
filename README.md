@@ -8,4 +8,5 @@ It's a web site related to events. You can see recent events and buy tickets as 
 - Bootstrap
 - 3-tier Architecture
 - MVC
+- Authorization
 - MsSql
