@@ -1,6 +1,6 @@
 # Narail
 It's a web site related to events. You can see recent events and buy tickets as use this site. 
-(Not yet completed!)
+<p>Not yet completed!</p>
 
 # Used Technologies
 - C#
@@ -8,3 +8,4 @@ It's a web site related to events. You can see recent events and buy tickets as 
 - Bootstrap
 - 3-tier Architecture
 - MVC
+- -MsSql
