@@ -3,7 +3,7 @@ It's a web site related to events. You can see recent events and buy tickets as 
 <p>Not yet completed!</p>
 
 # Used Technologies
-- C#
+- ASP.NET
 - Html, Css
 - Bootstrap
 - 3-tier Architecture
